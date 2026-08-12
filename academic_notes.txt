@@ -1,0 +1,203 @@
+
+STUDYMATE ACADEMIC KNOWLEDGE BASE
+
+1. LARGE LANGUAGE MODELS
+
+Large Language Models, commonly known as LLMs, are artificial intelligence
+models trained on very large collections of text. They can understand and
+generate human-like language.
+
+LLMs can be used for question answering, summarization, translation,
+content generation, programming assistance, and educational applications.
+
+Examples of language model families include T5, FLAN-T5, Llama, Mistral,
+Gemma, Qwen, and other transformer-based models.
+
+2. LIMITATIONS OF LANGUAGE MODELS
+
+Language models may have incomplete or outdated knowledge. They may also
+not have access to private or organization-specific documents.
+
+Because of this, an LLM may produce an answer that is not based on the
+latest or most relevant information.
+
+Retrieval-Augmented Generation can help address this limitation by
+connecting a language model with an external knowledge source.
+
+3. RETRIEVAL-AUGMENTED GENERATION
+
+Retrieval-Augmented Generation, commonly called RAG, is an AI technique
+that combines information retrieval with language generation.
+
+Instead of asking a language model to answer a question only from its
+internal knowledge, a RAG system first searches a collection of documents
+for relevant information.
+
+The retrieved information is then provided to the language model as
+context. The language model uses this context to generate the final answer.
+
+4. RAG PIPELINE
+
+A typical RAG pipeline contains the following stages:
+
+Dataset collection
+Document loading
+Text preprocessing
+Text chunking
+Embedding generation
+Vector database storage
+Similarity search
+Document retrieval
+Prompt construction
+Language model generation
+Final answer generation
+
+5. DOCUMENT CHUNKING
+
+Chunking means dividing a large document into smaller pieces called chunks.
+
+Chunking is important because language models have limits on the amount of
+text they can process at one time.
+
+Good chunks should contain meaningful information and should not be too
+large or too small.
+
+Chunk overlap can be used so that information near the boundary of two
+chunks is not completely lost.
+
+6. TEXT EMBEDDINGS
+
+An embedding is a numerical representation of text.
+
+Texts with similar meanings should have similar vector representations.
+
+Embeddings allow a computer to compare the semantic meaning of a user
+question with stored document chunks.
+
+The all-MiniLM-L6-v2 model is a popular sentence-transformer model and
+produces 384-dimensional embeddings.
+
+7. VECTOR DATABASE
+
+A vector database stores numerical representations of documents and allows
+efficient similarity searching.
+
+FAISS is a library developed for efficient similarity search and clustering
+of dense vectors.
+
+In StudyMate, FAISS is used as the vector database.
+
+8. RETRIEVAL
+
+When a user asks a question, the question is converted into an embedding.
+
+The question embedding is compared with the document embeddings stored in
+FAISS.
+
+The most similar document chunks are retrieved.
+
+These retrieved chunks are then supplied to the language model as context.
+
+9. PROMPT ENGINEERING
+
+Prompt engineering means designing instructions given to a language model.
+
+A RAG prompt normally contains the retrieved context, the user's question,
+and instructions explaining how the model should answer.
+
+StudyMate instructs the model to answer using the retrieved academic context.
+
+10. FLAN-T5
+
+FLAN-T5 is a sequence-to-sequence language model developed by Google.
+
+It can perform tasks such as question answering, summarization, translation,
+and text generation.
+
+StudyMate uses FLAN-T5-small because it is relatively lightweight and can
+run in a Google Colab environment.
+
+11. ADVANTAGES OF RAG
+
+RAG allows a language model to use information from an external knowledge
+base.
+
+It can reduce dependence on the model's internal knowledge.
+
+RAG also makes it possible to update the knowledge base without retraining
+the complete language model.
+
+Retrieved sources can be displayed to users, making the application more
+transparent.
+
+12. STUDYMATE APPLICATION
+
+StudyMate is an academic assistant designed for students.
+
+Students can ask questions about Large Language Models and
+Retrieval-Augmented Generation.
+
+The application searches its academic knowledge base, retrieves relevant
+information, and generates a concise answer.
+
+StudyMate also displays the retrieved source documents.
+
+13. EXTERNAL RESEARCH APIS
+
+StudyMate uses external APIs to provide additional research information.
+
+The Wikipedia API provides general topic summaries.
+
+The arXiv API provides access to research papers.
+
+The OpenAlex API provides scholarly publication information.
+
+The Crossref API provides research publication metadata and DOI information.
+
+The Open Library API provides information about books and authors.
+
+14. API INTEGRATION
+
+Application programming interfaces, or APIs, allow software applications
+to communicate with external services.
+
+StudyMate uses five external APIs to extend its research capabilities.
+
+The application also exposes its own REST API so that other applications
+can send questions to StudyMate programmatically.
+
+15. FASTAPI
+
+FastAPI is a Python framework for building web APIs.
+
+StudyMate exposes an API endpoint called /ask.
+
+A client can send a question to the endpoint and receive a JSON response
+containing the generated answer and retrieved sources.
+
+16. STUDENT USE CASE
+
+A student studying artificial intelligence can ask StudyMate questions such
+as:
+
+What is Retrieval-Augmented Generation?
+
+What is an embedding?
+
+Why is FAISS used in RAG?
+
+What are the advantages of RAG?
+
+What is prompt engineering?
+
+The system retrieves relevant academic information before generating the
+answer.
+
+17. CONCLUSION
+
+StudyMate demonstrates a complete end-to-end Retrieval-Augmented Generation
+application.
+
+The project includes data creation, preprocessing, chunking, embeddings,
+FAISS vector search, retrieval, prompt engineering, language generation,
+external API integration, Streamlit deployment, and a FastAPI REST API.
