@@ -1,0 +1,11 @@
+streamlit
+sentence-transformers
+transformers
+torch
+faiss-cpu
+requests
+feedparser
+fastapi
+uvicorn
+nest-asyncio
+numpy
